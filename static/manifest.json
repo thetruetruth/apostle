@@ -1,0 +1,39 @@
+{
+    "id": "apostle.rezzamula",
+    "name": "Apostle",
+    "short_name": "Apostle",
+    "description": "Send off for love of community",
+    "display": "standalone",
+    "start_url": "/",
+    "orientation": "any",
+    "background_color": "#000000",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "https://i0.wp.com/apostle.rezzamula.com/img/0a3WTBu.png?w=128",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i0.wp.com/apostle.rezzamula.com/img/0a3WTBu.png?w=192",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i0.wp.com/apostle.rezzamula.com/img/0a3WTBu.png?w=256",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i0.wp.com/apostle.rezzamula.com/img/0a3WTBu.png?w=384",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "https://i0.wp.com/apostle.rezzamula.com/img/0a3WTBu.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

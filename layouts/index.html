@@ -2,4 +2,15 @@
 {{ end }}
 {{ define "main" }}
 {{.Content}}
+<ul>
+    {{ range .Site.Taxonomies.categories }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a></li>
+    {{ end }}
+</ul>
+
+<ul>
+    {{ range .Site.Taxonomies.tags }}
+        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a></li>
+    {{ end }}
+</ul>
 {{ end }}
