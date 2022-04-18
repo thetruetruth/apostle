@@ -2,15 +2,17 @@
 {{ end }}
 {{ define "main" }}
 {{.Content}}
+
 <ul>
     {{ range .Site.Taxonomies.categories }}
-        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a></li>
+    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a></li>
+    {{ end }}
+</ul>
+<ul>
+    <!-- orders content according to the "publishdate" field in front matter -->
+    {{ range ( where .Site.RegularPages "Type" "news" ) }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
 </ul>
 
-<ul>
-    {{ range .Site.Taxonomies.tags }}
-        <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a></li>
-    {{ end }}
-</ul>
 {{ end }}

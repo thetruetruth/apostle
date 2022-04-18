@@ -1,10 +1,10 @@
+{{ define "title" }}{{ .Title }} &ndash; {{ .Site.Title }}{{end}}
 {{ define "main" }}
 <article>
     <header>
-        
         {{ range $z, $b := .Params.categories }}
                 {{ if $z }}, {{ end }}
-                <a href="/categories/{{$b}}">{{ $b}}</a>
+                <a href="/categories/{{$b}}">{{ $b | title}}</a>
         {{ end }}
         {{- with .Params.images }}
         <figure data-mode="aspect-fit">
