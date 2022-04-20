@@ -1,11 +1,11 @@
-<figure data-mode="aspect-fit" {{ with .Get "class" }}class="{{.}}"{{ end }}>
+<figure data-mode="aspect-fit" class="row">
     {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
-        <img loading="lazy" src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} 
+        <img class="img-fluid gx-0" loading="lazy" src="{{ .Get "src" }}" {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} 
         {{- with .Get "width" }} width="{{ . }}"{{ end -}}
         {{- with .Get "height" }} height="{{ . }}"{{ end -}}/>
     {{ if .Get "link" }}</a>{{ end }}
     {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr") }}
-    <figcaption>
+    <figcaption class="text-muted small px-2">
         {{ if or (.Get "caption") (.Get "attr") }}<p>
         {{ .Get "caption" }}
         {{ with .Get "attrlink" }}<a href="{{ . }}"> {{ end }}
