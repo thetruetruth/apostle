@@ -1,5 +1,7 @@
 {{ define "main" }}
+<main id="content" class="py-3">
 {{ range .Paginator.Pages }}
 <li><a href="{{.Permalink}}">{{.Title}}</a></li>
 {{ end }}
+</main>
 {{ end }}

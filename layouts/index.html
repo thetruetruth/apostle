@@ -2,17 +2,11 @@
 {{ end }}
 {{ define "main" }}
 {{.Content}}
-
+<main id="content" class="py-3">
 <ul>
-    {{ range .Site.Taxonomies.categories }}
-    <li><a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a></li>
-    {{ end }}
-</ul>
-<ul>
-    <!-- orders content according to the "publishdate" field in front matter -->
     {{ range ( where .Site.RegularPages "Type" "news" ) }}
     <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
     {{ end }}
 </ul>
-
+</main>
 {{ end }}

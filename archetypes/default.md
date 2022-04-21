@@ -10,6 +10,6 @@ height:
 authors:
 tags:
 categories:
-draft: false
+stories:
 ---
 

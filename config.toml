@@ -5,3 +5,5 @@ title = 'Apostle'
 [taxonomies]
   category = 'categories'
   tag = 'tags'
+  author = 'authors'
+  story = 'stories'
