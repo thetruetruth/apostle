@@ -16,7 +16,7 @@
                 <time class="small">{{.Lastmod.Format "January 2, 2006" }}</time>
             </div>
             <figure class="w-25 p-0 m-0">{{- with .Params.images }}
-                <img class="img-fluid" src="{{ index . 0 | absURL }}" srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=590 590w" sizes="(min-width: 640px) 590px, 100vw"
+                <img class="img-fluid" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}" srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=150 590w" sizes="(min-width: 640px) 590px, 100vw"
                     alt="{{ $.Params.caption | markdownify}}" width="{{ $.Params.width }}"
                     height="{{ $.Params.height }}">
             </figure>

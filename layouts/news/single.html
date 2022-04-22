@@ -16,7 +16,7 @@
         </nav>
             {{- with .Params.images }}
             <figure data-mode="aspect-fit" class="row mx-n1 g-0 p-0">
-                <img class="img-fluid" src="{{ index . 0 | absURL }}" srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=590 590w" sizes="(min-width: 640px) 590px, 100vw"
+                <img class="img-fluid" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}" srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=590 590w" sizes="(min-width: 640px) 590px, 100vw"
                     alt="{{ $.Params.caption | markdownify}}" width="{{ $.Params.width }}"
                     height="{{ $.Params.height }}">
                 <figcaption class="text-muted small px-2">{{ $.Params.caption | markdownify}}</figcaption>
@@ -45,17 +45,17 @@
     <footer class="row my-3">
         <div class="col-12 col-lg-8 mx-lg-auto">
             {{ with (.GetTerms "categories") }}
-            <h3 class="h6 d-inline mb-0">Categories</h3>
+            <h2 class="h6 d-inline mb-0">Categories</h2>
             <span class="d-inline">: </span>
             <p>{{ range $i, $t := . }}{{ if $i }},&nbsp;{{ end }}<a href="{{ $t.Permalink }}">{{ $t.LinkTitle | title }}</a>{{ end }}</p>
             {{ end }}
             {{ with (.GetTerms "tags") }}
-            <h3 class="h6 d-inline mb-0">Tags</h3>
+            <h2 class="h6 d-inline mb-0">Tags</h2>
             <span class="d-inline">: </span>
             <p>{{ range $i, $t := . }}{{ if $i }},&nbsp;{{ end }}<a href="{{ $t.Permalink }}">{{ $t.LinkTitle | title }}</a>{{ end }}</p>
             {{ end }}
             {{ with (.GetTerms "stories") }}
-            <h3 class="h6 d-inline mb-0">Stories</h3>
+            <h2 class="h6 d-inline mb-0">Stories</h2>
             <span class="d-inline">: </span>
             <p>{{ range $i, $t := . }}{{ if $i }},&nbsp;{{ end }}<a href="{{ $t.Permalink }}">{{ $t.LinkTitle | title }}</a>{{ end }}</p>
             {{ end }}
