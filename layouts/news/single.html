@@ -27,8 +27,9 @@
             {{ partial "share.html" . }}
             {{ range $i, $t := .Params.authors }}
             {{ if $i }}, {{ end }}
-            <address>{{ $t}}</address>
+            <a class="d-inline-block" href="/authors/{{$t | urlize }}"><address class="fw-bold">{{ $t}}</address></a>
             {{ end }}
+            <br>
             <time class="op-published d-none" dateTime="{{ .Date.Format " 2006-01-02T15:04:05.00Z" | safeHTML }}">{{.Date.Format "2006-01-02T15:04:05.00Z" | safeHTML }}</time>
             <span>Updated: </span>
             <time class="op-modified d-inline" dateTime="{{ .Lastmod.Format "2006-01-02T15:04:05.00Z" | safeHTML }}">{{.Lastmod.Format "January 2, 2006" }}</time>
@@ -44,21 +45,22 @@
     <footer class="row my-3">
         <div class="col-12 col-lg-8 mx-lg-auto">
             {{ with (.GetTerms "categories") }}
-            <h2 class="h6 d-inline mb-0">Categories</h2>
+            <h3 class="h6 d-inline mb-0">Categories</h3>
             <span class="d-inline">: </span>
             <p>{{ range $i, $t := . }}{{ if $i }},&nbsp;{{ end }}<a href="{{ $t.Permalink }}">{{ $t.LinkTitle | title }}</a>{{ end }}</p>
             {{ end }}
             {{ with (.GetTerms "tags") }}
-            <h2 class="h6 d-inline mb-0">Tags</h2>
+            <h3 class="h6 d-inline mb-0">Tags</h3>
             <span class="d-inline">: </span>
             <p>{{ range $i, $t := . }}{{ if $i }},&nbsp;{{ end }}<a href="{{ $t.Permalink }}">{{ $t.LinkTitle | title }}</a>{{ end }}</p>
             {{ end }}
             {{ with (.GetTerms "stories") }}
-            <h2 class="h6 d-inline mb-0">Stories</h2>
+            <h3 class="h6 d-inline mb-0">Stories</h3>
             <span class="d-inline">: </span>
             <p>{{ range $i, $t := . }}{{ if $i }},&nbsp;{{ end }}<a href="{{ $t.Permalink }}">{{ $t.LinkTitle | title }}</a>{{ end }}</p>
             {{ end }}
             {{ partial "share.html" . }}
+            {{ partial "related.html" . }}
         </div>
     </footer>
 </article>

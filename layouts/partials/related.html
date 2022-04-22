@@ -1,0 +1,28 @@
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+<h3 class="h6 d-inline mb-0">See Also</h3>
+<span class="d-inline">: </span>
+<ul class="list-group mt-3">
+	{{ range . }}
+	<li class="list-group-item border-0 p-0 mb-3">
+        <article class="d-flex">
+            <div class="w-75 m-0 d-flex flex-column">
+                <p class="mb-1" >
+                    {{- with .Params.categories }}
+                        <a class="d-none d-md-inline-block badge rounded-pill bg-primary text-white" style="z-index: 2;" href="/categories/{{ index . 0 }}/">{{ index . 0 | title }}</a>
+                    {{ end }}
+                </p>
+                <h1 class="h6"><a class="stretched-link fw-bold" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+                <time class="small">{{.Lastmod.Format "January 2, 2006" }}</time>
+            </div>
+            <figure class="w-25 p-0 m-0">{{- with .Params.images }}
+                <img class="img-fluid" src="{{ index . 0 | absURL }}" srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=590 590w" sizes="(min-width: 640px) 590px, 100vw"
+                    alt="{{ $.Params.caption | markdownify}}" width="{{ $.Params.width }}"
+                    height="{{ $.Params.height }}">
+            </figure>
+                {{ end -}}
+        </article>
+    </li>
+	{{ end }}
+</ul>
+{{ end }}
