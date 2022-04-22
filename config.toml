@@ -1,6 +1,7 @@
 baseURL = 'https://apostle.rezzamula.com/'
 languageCode = 'en-us'
 title = 'Apostle'
+enableRobotsTXT = true
 
 [taxonomies]
   category = 'categories'
