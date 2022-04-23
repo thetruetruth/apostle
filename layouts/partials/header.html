@@ -2,7 +2,7 @@
     <a class="navbar-brand text-dark fw-bolder ps-3" href="/">{{ .Site.Title }}</a>
     <div class="overflow-auto ms-auto">
         <nav class="nav flex-nowrap" role="navigation">
-            {{ range .Site.Taxonomies.categories }}
+            {{ range .Site.Taxonomies.categories.ByCount }}
             <a class="nav-link px-2 fw-bold" href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a>
             {{ end }}
         </nav>

@@ -16,7 +16,7 @@
         </nav>
             {{- with .Params.images }}
             <figure data-mode="aspect-fit" class="row mx-n1 g-0 p-0">
-                <img class="img-fluid" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}" srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=590 590w" sizes="(min-width: 640px) 590px, 100vw"
+                <img class="img-fluid lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?w=10" data-srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=590 590w" data-sizes="auto"
                     alt="{{ $.Params.caption | markdownify}}" width="{{ $.Params.width }}"
                     height="{{ $.Params.height }}">
                 <figcaption class="text-muted small px-2">{{ $.Params.caption | markdownify}}</figcaption>

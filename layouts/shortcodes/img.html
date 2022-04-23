@@ -1,7 +1,7 @@
 <figure data-mode="aspect-fit" class="row">
     {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
-        <img class="img-fluid gx-0" loading="lazy" src="{{ replace (.Get "src") "https://" "https://i0.wp.com/" }}" 
-        srcset="{{ replace (.Get "src") "https://" "https://i0.wp.com/" }}?h=590" sizes="(min-width: 640px) 590px, 100vw"
+        <img class="lazyload img-fluid gx-0" src="{{ replace (.Get "src") "https://" "https://i0.wp.com/" }}?w=10" 
+        data-srcset="{{ replace (.Get "src") "https://" "https://i0.wp.com/" }}?h=590" data-sizes="auto"
         {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} 
         {{- with .Get "width" }} width="{{ . }}"{{ end -}}
         {{- with .Get "height" }} height="{{ . }}"{{ end -}}/>

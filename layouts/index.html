@@ -3,9 +3,14 @@
 {{ define "main" }}
 {{.Content}}
 <main id="content" class="py-3">
-<ul>
+
+<ul class="list-group list-group-flush">
     {{ range ( where .Site.RegularPages "Type" "news" ) }}
-    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    <li class="list-group-item">
+        {{with .Params.categories}}<a class="fw-bold small text-dark" href="/categories/{{ index . 0 }}/">{{ index . 0 | title }}</a><span class="visually-hidden">:</span>{{end}}
+        <br>
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
     {{ end }}
 </ul>
 </main>

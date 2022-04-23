@@ -14,9 +14,9 @@
                 </p>
                 <h1 class="h6"><a class="stretched-link fw-bold" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
                 <time class="small">{{.Lastmod.Format "January 2, 2006" }}</time>
-            </div>
-            <figure class="w-25 p-0 m-0">{{- with .Params.images }}
-                <img class="img-fluid" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}" srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=150 590w" sizes="(min-width: 640px) 590px, 100vw"
+            </div>{{- with .Params.images }}
+            <figure class="w-25 p-0 m-0">
+                <img class="img-fluid lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?w=10" data-srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=150 590w" data-sizes="auto"
                     alt="{{ $.Params.caption | markdownify}}" width="{{ $.Params.width }}"
                     height="{{ $.Params.height }}">
             </figure>
