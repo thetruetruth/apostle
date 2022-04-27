@@ -6,10 +6,17 @@
 
 <ul class="list-group list-group-flush">
     {{ range ( where .Site.RegularPages "Type" "news" ) }}
-    <li class="list-group-item">
-        {{with .Params.categories}}<a class="fw-bold small text-dark" href="/categories/{{ index . 0 }}/">{{ index . 0 | title }}</a><span class="visually-hidden">:</span>{{end}}
+    <li class="list-group-item position-relative">
+        {{with .Params.categories}}<a class="fw-bold small text-dark position-absolute" style="z-index: 2;" href="/categories/{{ index . 0 }}/">{{ index . 0 | title }}</a>{{end}}
         <br>
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- with .Params.images }}
+        <div class="float-end ms-1">
+        <img class="lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?resize=100,100" alt="{{ $.Params.caption | markdownify}}" >
+        </div>
+        {{ end -}}
+        <a class="stretched-link" href="{{ .Permalink }}">{{ .Title | title}}</a>
+        <p class="mb-0" style="overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;">{{ .Params.description | markdownify}}</p>
+        
     </li>
     {{ end }}
 </ul>

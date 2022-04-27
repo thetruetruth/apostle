@@ -14,14 +14,15 @@
             </ol>
             {{ end }}
         </nav>
-            {{- with .Params.images }}
-            <figure data-mode="aspect-fit" class="row mx-n1 g-0 p-0">
-                <img class="img-fluid lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?w=10" data-srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=590 590w" data-sizes="auto"
-                    alt="{{ $.Params.caption | markdownify}}" width="{{ $.Params.width }}"
-                    height="{{ $.Params.height }}">
-                <figcaption class="text-muted small px-2">{{ $.Params.caption | markdownify}}</figcaption>
-            </figure>
-            {{ end -}}
+        {{- with .Params.images }}
+        <figure data-mode="aspect-fit" class="row mx-n1 g-0 p-0">
+            <div class="ratio" style="--bs-aspect-ratio: calc({{ $.Params.height }} / {{ $.Params.width }} * 100%);">
+            <img class="lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?w=10" data-srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=590 590w" data-sizes="auto"
+                alt="{{ $.Params.caption | markdownify}}" >
+            </div>
+            <figcaption class="text-muted small px-2">{{ $.Params.caption | markdownify}}</figcaption>
+        </figure>
+        {{ end -}}
             <h1>{{ .Title | title }}</h1>
             <p class="op-kicker">{{ .Params.description | markdownify}}</p>
             {{ partial "share.html" . }}

@@ -1,10 +1,10 @@
-<figure data-mode="aspect-fit" class="row">
+<figure data-mode="aspect-fit" class="row mx-n1 g-0 p-0">
     {{ with .Get "link" }}<a href="{{ . }}">{{ end }}
-        <img class="lazyload img-fluid gx-0" src="{{ replace (.Get "src") "https://" "https://i0.wp.com/" }}?w=10" 
+        <div class="ratio" style="--bs-aspect-ratio: calc({{- with .Get "height" }}{{ . }}{{ end -}} / {{- with .Get "width" }}{{ . }}{{ end -}} * 100%);"> 
+        <img class="lazyload" src="{{ replace (.Get "src") "https://" "https://i0.wp.com/" }}?h=10" 
         data-srcset="{{ replace (.Get "src") "https://" "https://i0.wp.com/" }}?h=590" data-sizes="auto"
-        {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }} 
-        {{- with .Get "width" }} width="{{ . }}"{{ end -}}
-        {{- with .Get "height" }} height="{{ . }}"{{ end -}}/>
+        {{ if or (.Get "alt") (.Get "caption") }}alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" }}{{ end }}"{{ end }}/>
+    </div>
     {{ if .Get "link" }}</a>{{ end }}
     {{ if or (or (.Get "title") (.Get "caption")) (.Get "attr") }}
     <figcaption class="text-muted small px-2">

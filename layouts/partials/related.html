@@ -6,7 +6,7 @@
 	{{ range . }}
 	<li class="list-group-item border-0 p-0 mb-3">
         <article class="d-flex">
-            <div class="w-75 m-0 d-flex flex-column">
+            <div class="w-75 m-0 d-flex flex-column pe-1">
                 <p class="mb-1" >
                     {{- with .Params.categories }}
                         <a class="d-none d-md-inline-block badge rounded-pill bg-primary text-white" style="z-index: 2;" href="/categories/{{ index . 0 }}/">{{ index . 0 | title }}</a>
@@ -16,7 +16,7 @@
                 <time class="small">{{.Lastmod.Format "January 2, 2006" }}</time>
             </div>{{- with .Params.images }}
             <figure class="w-25 p-0 m-0">
-                <img class="img-fluid lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?w=10" data-srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=150 590w" data-sizes="auto"
+                <img class="img-fluid lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=10" data-srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=150 590w" data-sizes="auto"
                     alt="{{ $.Params.caption | markdownify}}" width="{{ $.Params.width }}"
                     height="{{ $.Params.height }}">
             </figure>
