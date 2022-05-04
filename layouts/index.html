@@ -14,9 +14,8 @@
         <img class="lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?resize=10,10" data-src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?resize=200,200" width="100" height="100" alt="{{ $.Params.caption | markdownify}}" >
         </div>
         {{ end -}}
-        <a class="stretched-link hoverunderline" href="{{ .Permalink }}">{{ .Title | title}}</a>
+        <a class="stretched-link hoverunderline fw-bold" href="{{ .Permalink }}">{{ .Title | title}}</a>
         <p class="mb-0 d-none d-lg-block" style="overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;">{{ .Params.description | markdownify}}</p>
-        
     </li>
     {{ end }}
 </ul>
