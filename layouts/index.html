@@ -3,21 +3,27 @@
 {{ define "main" }}
 {{.Content}}
 <main id="content" class="py-3">
-
-<ul class="list-group list-group-flush">
-    {{ range ( where .Site.RegularPages "Type" "news" ) }}
-    <li class="list-group-item position-relative">
-        {{with .Params.categories}}<a class="fw-bold small text-dark position-absolute" style="z-index: 2;min-height: 48px; min-width: 48px;" href="/categories/{{ index . 0 }}/">{{ index . 0 | title }}</a>{{end}}
-        <br>
-        {{- with .Params.images }}
-        <div class="float-end ms-1">
-        <img class="lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?resize=10,10" data-src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?resize=200,200" width="100" height="100" alt="{{ $.Params.caption | markdownify}}" >
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-8 mx-auto">
+            <ul class="list-group list-group-flush">
+                {{ range ( where .Site.RegularPages "Type" "news" ) }}
+                <li class="list-group-item position-relative px-0">
+                    {{with .Params.categories}}<a class="fw-bold small text-dark position-absolute" style="z-index: 2;min-height: 48px; min-width: 48px;" href="/categories/{{ index . 0 }}/">{{ index . 0 | title }}</a>{{end}}
+                    <br>
+                    {{- with .Params.images }}
+                    <div class="float-end ms-1">
+                    <img class="lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?resize=10,10" data-src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?resize=200,200" width="100" height="100" alt="{{ $.Params.caption | markdownify}}" >
+                    </div>
+                    {{ end -}}
+                    <a class="stretched-link hoverunderline fw-bold" href="{{ .Permalink }}">{{ .Title | title}}</a>
+                    <p class="mb-0 d-none d-lg-block" style="overflow: hidden; display: -webkit-box !important; -webkit-box-orient: vertical; -webkit-line-clamp: 3;">{{ .Params.description | markdownify}}</p>
+                </li>
+                {{ end }}
+            </ul>
         </div>
-        {{ end -}}
-        <a class="stretched-link hoverunderline fw-bold" href="{{ .Permalink }}">{{ .Title | title}}</a>
-        <p class="mb-0 d-none d-lg-block" style="overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3;">{{ .Params.description | markdownify}}</p>
-    </li>
-    {{ end }}
-</ul>
+
+    </div>
+</div>
 </main>
 {{ end }}

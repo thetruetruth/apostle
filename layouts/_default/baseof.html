@@ -82,15 +82,22 @@
         article {
             word-wrap: break-word;
             word-break: break-word;
+            font-size: 19px;
+        }
+        article p a {
+            font-weight: 500;
+        }
+        article .external{
+            color: #FF0000;
+            font-weight: 500;
         }
     </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     {{ partial "header.html" .}}
-    <hr class="m-0">
     {{ block "main" . }}{{ end }}
-    <hr class="m-0">
     {{ partial "footer.html" .}}
 </body>
 

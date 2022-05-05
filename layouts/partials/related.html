@@ -12,8 +12,8 @@
                         <a class="d-none d-md-inline-block badge rounded-pill bg-primary text-white" style="z-index: 2;" href="/categories/{{ index . 0 }}/">{{ index . 0 | title }}</a>
                     {{ end }}
                 </p>
-                <h1 class="h6"><a class="stretched-link fw-bold" href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-                <time class="small">{{.Lastmod.Format "January 2, 2006" }}</time>
+                <h1 class="h6"><a class="stretched-link fw-bold" href="{{ .RelPermalink }}">{{ .Title | title | markdownify}}</a></h1>
+                <time style="font-size:14px;">{{.Lastmod.Format "January 2, 2006" }}</time>
             </div>{{- with .Params.images }}
             <figure class="w-25 p-0 m-0">
                 <img class="img-fluid lazyload" src="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=10" data-srcset="{{ replace (index . 0) "https://" "https://i0.wp.com/" }}?h=150 590w" data-sizes="auto"
