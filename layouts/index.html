@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-12 col-lg-8 mx-auto">
             <ul class="list-group list-group-flush">
-                {{ range ( where .Site.RegularPages "Type" "news" ) }}
+                {{ range ( where .Site.RegularPages "Type" "article" ) }}
                 <li class="list-group-item position-relative px-0">
                     {{with .Params.categories}}<a class="fw-bold small text-dark position-absolute" style="z-index: 2;min-height: 48px; min-width: 48px;" href="/categories/{{ index . 0 }}/">{{ index . 0 | title }}</a>{{end}}
                     <br>

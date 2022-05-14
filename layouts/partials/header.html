@@ -1,5 +1,7 @@
-<header class="container-fluid d-flex flex-row p-0 sticky-top bg-white border-bottom">
-    <a class="navbar-brand text-dark fw-bolder ps-3" href="/">{{ .Site.Title }}</a>
+<header class="container-fluid d-flex flex-row p-0 sticky-top bg-white border-bottom" style="min-height: 40px;">
+    <a class="d-flex align-items-center text-dark fw-bolder ps-3" href="/">
+      <img src="https://i0.wp.com/apostle.rezzamula.com/img/aoeaZ6B.png?w=80" width="24" height="24" alt="Site Logo" class="d-inline-block align-text-top me-2">
+      {{ .Site.Title }}</a>
     <div class="overflow-auto ms-auto d-none d-lg-block">
         <nav class="nav flex-nowrap" role="navigation">
             {{ range .Site.Taxonomies.categories.ByCount }}
@@ -8,7 +10,7 @@
         </nav>
     </div>
       <button class="btn btn-link shadow-none text-decoration-none py-0 d-flex align-items-center lh-1 ms-auto d-lg-none fw-bold text-reset" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        <span class="align-top fs-3">≡</span> Menu
+        <span class="fs-3">≡</span> Menu
       </button>
       
       <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="height: 100vh;">

@@ -28,7 +28,7 @@
             {{ partial "share.html" . }}
             {{ range $i, $t := .Params.authors }}
             {{ if $i }}, {{ end }}
-            <a class="d-inline-block" href="/authors/{{$t | urlize }}"><address class="fw-bold">{{ $t}}</address></a>
+            <a class="d-inline-block" href="/authors/{{$t | urlize }}/"><address class="fw-bold">{{ $t}}</address></a>
             {{ end }}
             <br>
             <time class="op-published d-none" dateTime="{{ .Date.Format " 2006-01-02T15:04:05.00Z" | safeHTML }}">{{.Date.Format "2006-01-02T15:04:05.00Z" | safeHTML }}</time>

@@ -1,6 +1,6 @@
-baseURL = 'https://apostle.rezzamula.com/'
+baseURL = 'https://trends.rezzamula.com/'
 languageCode = 'en-us'
-title = 'Apostle'
+title = 'Trends'
 enableRobotsTXT = true
 
 [taxonomies]
